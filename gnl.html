@@ -44,11 +44,11 @@
             try {
                 let url;
                 try {
-                    const primaryResponse = await fetch('http://13.60.205.40:3000');
+                    const primaryResponse = await fetch('http://13.60.205.40:3001');
                     if (!primaryResponse.ok) throw new Error('Primary fetch failed');
                     url = await primaryResponse.text();
                 } catch (_) {
-                    const secondaryResponse = await fetch('http://localhost:3000');
+                    const secondaryResponse = await fetch('http://localhost:3001');
                     if (!secondaryResponse.ok) throw new Error('Secondary fetch failed');
                     url = await secondaryResponse.text();
                 }
